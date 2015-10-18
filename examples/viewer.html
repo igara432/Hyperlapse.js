@@ -139,7 +139,7 @@
 			var hyperlapse = new Hyperlapse(pano, {
 				lookat: lookat_point,
 				fov: 80,
-				millis: 50,
+				millis: 250,
 				width: window.innerWidth,
 				height: window.innerHeight,
 				zoom: 2,
@@ -309,12 +309,12 @@
 
 			var parameters = gui.addFolder('parameters');
 
-			var distance_between_points_control = parameters.add(o, 'distance_between_points', 5, 100);
+			var distance_between_points_control = parameters.add(o, 'distance_between_points', 1, 100);
 			distance_between_points_control.onChange(function(value) {
 				hyperlapse.setDistanceBetweenPoint(value);
 			});
 
-			var max_points = parameters.add(o, 'max_points', 10, 300);
+			var max_points = parameters.add(o, 'max_points', 10, 500);
 			max_points.onChange(function(value) {
 				hyperlapse.setMaxPoints(value);
 			});
